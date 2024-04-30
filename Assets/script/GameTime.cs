@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class GameTime : MonoBehaviour
+{
+    public float GameSecond = 00;
+    public float GameHour;
+
+    string stringSecond;
+    private string stringHour;
+
+    public TextMeshProUGUI textTime;
+
+    void Update()
+    {
+        GameSecond = GameSecond + Time.deltaTime;
+
+        stringSecond = GameSecond.ToString();
+        stringHour = GameHour.ToString();
+
+        textTime.text = stringHour + ":00";
+
+        if (GameSecond >= 30.0f)
+        {
+            GameHour = GameHour + 1;
+            GameSecond = 0;
+        }
+
+        if(GameHour >= 24)
+        {
+            GameHour = 00;
+        }
+    }
+}

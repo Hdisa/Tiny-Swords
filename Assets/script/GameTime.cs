@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameTime : MonoBehaviour
 {
-    public float GameSecond = 00;
+    public float GameSecond;
     public float GameHour;
 
     string stringSecond;

@@ -15,11 +15,11 @@ public class CustomCursor : MonoBehaviour
         
         if (onTriggerEnter == true)
         {
-            color = Color.red;
+            color = Color.red + Color.white;
         }
         if (onTriggerEnter != true)
         {
-            color = Color.blue;
+            color = Color.cyan;
         }
         rend.material.color = color;
     }

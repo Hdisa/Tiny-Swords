@@ -10,4 +10,8 @@ public class StartGame : MonoBehaviour
     {
         SceneManager.LoadScene(GameLvl, LoadSceneMode.Additive);
     }
+    public void Menu()
+    {
+        SceneManager.UnloadSceneAsync(GameLvl);
+    }
 }

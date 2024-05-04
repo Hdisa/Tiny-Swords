@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
-public class SoundMenuMusic : MonoBehaviour
+public class SoundMusic : MonoBehaviour
 {
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private string groupID;
@@ -18,13 +18,25 @@ public class SoundMenuMusic : MonoBehaviour
         _slider = GetComponent<Slider>();
         _slider.maxValue = 100;
         _slider.minValue = 0;
-        mixer.GetFloat(groupID, out float t);
-        _slider.value = Mathf.Lerp(0, 100, (t - minValue) / (maxValue - minValue));
+        float level;
+        if (PlayerPrefs.HasKey(groupID))
+        {
+            level = PlayerPrefs.GetFloat(groupID);
+            _slider.value = level;
+            ChangeVolume(level);
+        }
+        else
+        {
+            mixer.GetFloat(groupID, out float t);
+            _slider.value = Mathf.Lerp(0, 100, (t - minValue) / (maxValue - minValue));
+        }
+        
         _slider.onValueChanged.AddListener(ChangeVolume);
     }
 
     private void ChangeVolume(float v)
     {
         mixer.SetFloat(groupID, Mathf.Lerp(minValue, maxValue, v/100));
+        PlayerPrefs.SetFloat(groupID , v);
     }
 }

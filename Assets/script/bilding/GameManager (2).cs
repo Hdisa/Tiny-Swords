@@ -5,9 +5,10 @@ public class GameManager : MonoBehaviour
 {
     private GameObject buildingToPlace;
     public CustomCursor cursor;
-    
-    
-    private void Update()
+    public sell sell;
+    public bool ess;
+
+        private void Update()
     {
         if (Input.GetMouseButtonDown(0) && buildingToPlace != null & cursor.onTriggerEnter != true)
         {
@@ -19,11 +20,22 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void SellBuilding(float prise)
+    {
+        if (sell.Sell >= prise)
+        {
+            sell.Sell -= prise;
+            ess = true;
+        }
+    }
     public void ConstructionBuilding(GameObject building)
     {
-        cursor.gameObject.SetActive(true);
-        cursor.GetComponent<SpriteRenderer>().sprite = building.GetComponent<SpriteRenderer>().sprite;
-        buildingToPlace = building;
-        Cursor.visible = false;
+        if (ess)
+        {
+            cursor.gameObject.SetActive(true);
+            cursor.GetComponent<SpriteRenderer>().sprite = building.GetComponent<SpriteRenderer>().sprite;
+            buildingToPlace = building;
+            Cursor.visible = false;
+        }
     }
 }

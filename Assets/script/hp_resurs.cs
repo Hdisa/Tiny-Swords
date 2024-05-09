@@ -10,6 +10,9 @@ public class hp_resurs : MonoBehaviour
     
     void Update()
     {
-        
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -27,10 +27,15 @@ public class GameManager : MonoBehaviour
             sell.Sell -= prise;
             ess = true;
         }
+
+        if (sell.Sell <= prise - 1)
+        {
+            ess = false;
+        }
     }
     public void ConstructionBuilding(GameObject building)
     {
-        if (ess)
+        if (ess == true)
         {
             cursor.gameObject.SetActive(true);
             cursor.GetComponent<SpriteRenderer>().sprite = building.GetComponent<SpriteRenderer>().sprite;

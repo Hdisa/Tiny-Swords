@@ -18,6 +18,7 @@ public class MineWork : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Sell.Sell += (1 * plys) * Time.deltaTime;
+        Sell.Sell += plys * Time.deltaTime;
+        
     }
 }

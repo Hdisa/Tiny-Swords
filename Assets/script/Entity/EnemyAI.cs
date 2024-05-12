@@ -3,14 +3,18 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    private Camera cam;
+    [SerializeField] private GameObject mainObject;
     private NavMeshAgent agent;
 
     private void Awake()
     {
-        cam = Camera.main;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+    }
+
+    private void Update()
+    {
+        agent.SetDestination(mainObject.transform.position);
     }
 }

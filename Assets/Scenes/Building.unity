@@ -3553,6 +3553,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1118258117}
     - target: {fileID: 5457962027556808742, guid: 8e2b971b414ff1845b50ab8d60b4e01e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1118258115}
+    - target: {fileID: 5457962027556808742, guid: 8e2b971b414ff1845b50ab8d60b4e01e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -3574,7 +3578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5457962027556808742, guid: 8e2b971b414ff1845b50ab8d60b4e01e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: price, Assembly-CSharp
+      value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5457962027556808742, guid: 8e2b971b414ff1845b50ab8d60b4e01e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument

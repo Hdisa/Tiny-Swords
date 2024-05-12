@@ -22,6 +22,6 @@ public class sellUI : MonoBehaviour
 
     public void UI()
     {
-        sellMonne.text = sellGet.Sell.ToString();
+        sellMonne.text = sellGet.Sell.ToString("F0");
     }
 }

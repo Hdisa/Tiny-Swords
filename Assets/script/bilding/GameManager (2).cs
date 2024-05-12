@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public sell sell;
     public bool ess;
 
+    private float _prise;
+
         private void Update()
     {
         if (Input.GetMouseButtonDown(0) && buildingToPlace != null & cursor.onTriggerEnter != true)
@@ -17,20 +19,28 @@ public class GameManager : MonoBehaviour
             cursor.gameObject.SetActive(false);
             Cursor.visible = true;
         }
-        
+        if (sell.Sell >= _prise)
+        {
+            ess = true;
+        }
+
+        if (sell.Sell <= _prise - 1)
+        {
+            ess = false;
+        }
     }
 
     public void SellBuilding(float prise)
     {
-        if (sell.Sell >= prise)
+        _prise = prise;
+        if (ess)
         {
-            sell.Sell -= prise;
-            ess = true;
+            sell.Sell -= _prise;
         }
     }
     public void ConstructionBuilding(GameObject building)
     {
-        if (ess)
+        if (ess == true)
         {
             cursor.gameObject.SetActive(true);
             cursor.GetComponent<SpriteRenderer>().sprite = building.GetComponent<SpriteRenderer>().sprite;

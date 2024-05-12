@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Camera Settings
   m_EditorClassIdentifier: 
   edgeMode: 0
-  keyboardMode: 0
+  keyboardMode: 1
   fastSpeed: 0.05
   normalSpeed: 0.01
   switchFast: 304

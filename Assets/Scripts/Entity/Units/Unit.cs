@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(Health), typeof(NavMeshAgent), typeof(AttackController))]
 public class Unit : MonoBehaviour
 {
     private Vector3 target;

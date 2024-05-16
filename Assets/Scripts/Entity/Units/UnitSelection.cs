@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,8 +8,6 @@ public class UnitSelection : MonoBehaviour
 
     private static UnitSelection instance;
     public static UnitSelection Instance => instance;
-    
-    public LayerMask attackable;
     private Camera cam;
 
     public void Awake()
@@ -26,18 +23,7 @@ public class UnitSelection : MonoBehaviour
 
     private void Update()
     {
-        if (selectedUnits.Count == 0) return;
-
-        Vector2 ray2D = cam.ScreenToWorldPoint(Input.mousePosition);
-        var hit = Physics2D.Raycast(ray2D, Vector2.zero, Mathf.Infinity, attackable);
-        if (!hit) return;
-
-        Transform target = hit.transform;
-        foreach (var unit in selectedUnits)
-        {
-            var attackController = unit.GetComponent<AttackController>();
-            if (attackController != null) attackController.targetToAttack = target;
-        }
+        
     }
 
     public void ClickSelect(GameObject unit)
@@ -45,7 +31,6 @@ public class UnitSelection : MonoBehaviour
         DeselectAll();
         selectedUnits.Add(unit);
         unit.transform.GetChild(0).gameObject.SetActive(true);
-        unit.GetComponent<UnitMovement>().enabled = true;
     }
 
     public void ShiftClickSelect(GameObject unit)
@@ -54,7 +39,6 @@ public class UnitSelection : MonoBehaviour
         {
             selectedUnits.Add(unit);
             unit.transform.GetChild(0).gameObject.SetActive(true);
-            unit.GetComponent<UnitMovement>().enabled = true;
         }
         else
         {
@@ -79,7 +63,6 @@ public class UnitSelection : MonoBehaviour
     {
         foreach (var unit in selectedUnits)
         {
-            unit.GetComponent<UnitMovement>().enabled = false;
             unit.transform.GetChild(0).gameObject.SetActive(false);
         }
         selectedUnits.Clear();

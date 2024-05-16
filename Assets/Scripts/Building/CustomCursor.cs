@@ -20,7 +20,7 @@ public class CustomCursor : MonoBehaviour
         {
             color = Color.red + Color.white;
         }
-        if (onTriggerEnter == false)
+        if (!onTriggerEnter)
         {
             color = Color.cyan;
         }

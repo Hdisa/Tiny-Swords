@@ -5,7 +5,6 @@ public class UnitMovement : MonoBehaviour
 {
     private Camera cam;
     private NavMeshAgent agent;
-    public LayerMask ground;
     public bool priorityMove;
     private AttackController attackController;
     
@@ -22,15 +21,18 @@ public class UnitMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             Vector2 ray2D = cam.ScreenToWorldPoint(Input.mousePosition);
-            priorityMove = true;
-            agent.SetDestination(ray2D);
+            foreach (var unit in UnitSelection.Instance.selectedUnits)
+            {
+                priorityMove = true;
+                unit.GetComponent<NavMeshAgent>().SetDestination(ray2D);
+                unit.GetComponent<AttackController>().targetToAttack = null;
+            }
         }
 
         //Если юнит достиг точки назначения
         if (agent.hasPath == false || agent.remainingDistance <= agent.stoppingDistance)
         {
             priorityMove = false;
-            attackController.targetToAttack = null; // отрыв от врага, чтобы он не прилипал снова к противнику
         }
     }
 }

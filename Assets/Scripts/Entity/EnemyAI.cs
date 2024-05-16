@@ -1,16 +1,16 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(Health), typeof(NavMeshAgent), typeof(AttackController))]
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private GameObject mainObject;
     private NavMeshAgent agent;
-    private Health hp;
+    private AttackController attackController;
 
     private void Awake()
     {
-        hp = GetComponent<Health>();
+        attackController = GetComponent<AttackController>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -19,10 +19,5 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         agent.SetDestination(mainObject.transform.position);
-    }
-
-    public void ReceiveDamage(float damage)
-    {
-        hp.HealthPoint -= damage;
     }
 }

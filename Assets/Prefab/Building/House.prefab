@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5020315904387653244}
   - component: {fileID: 2566599616691234309}
   - component: {fileID: 6027910420885048496}
+  - component: {fileID: 6350989334700749374}
+  - component: {fileID: 1597680821776282337}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -132,6 +134,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8123133, y: 2.4519548}
   m_EdgeRadius: 0
+--- !u!114 &6350989334700749374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4938008151638557268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d3f4a25298fac458b6414fe1cece7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 50
+--- !u!114 &1597680821776282337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4938008151638557268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d1ef775a7d5cda4e9fd9b8a1a939b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8839221870218469133
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7388303855380985746}
-  - component: {fileID: 2894483855567653088}
+  - component: {fileID: 6740331641669602636}
   m_Layer: 0
   m_Name: point (1)
   m_TagString: Untagged
@@ -164,7 +191,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5020315904387653244}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2894483855567653088
+--- !u!114 &6740331641669602636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,10 +200,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8839221870218469133}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d1ef775a7d5cda4e9fd9b8a1a939b4f, type: 3}
+  m_Script: {fileID: 11500000, guid: cd14aa56025c67d488aa8923e188b7d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Worker: {fileID: 2113378657033696572, guid: dd2065483216cb04fa393afee91b9ceb, type: 3}
+  worker: {fileID: 2113378657033696572, guid: dd2065483216cb04fa393afee91b9ceb, type: 3}
 --- !u!1 &9160883383878126174
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6317897461136576407}
-  - component: {fileID: 7395238346710677891}
+  - component: {fileID: 130537249776504386}
   m_Layer: 0
   m_Name: point
   m_TagString: Untagged
@@ -209,7 +236,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5020315904387653244}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7395238346710677891
+--- !u!114 &130537249776504386
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,7 +245,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9160883383878126174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d1ef775a7d5cda4e9fd9b8a1a939b4f, type: 3}
+  m_Script: {fileID: 11500000, guid: cd14aa56025c67d488aa8923e188b7d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Worker: {fileID: 2113378657033696572, guid: dd2065483216cb04fa393afee91b9ceb, type: 3}
+  worker: {fileID: 2113378657033696572, guid: dd2065483216cb04fa393afee91b9ceb, type: 3}

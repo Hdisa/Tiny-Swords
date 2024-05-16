@@ -15,6 +15,6 @@ public class Mine : MonoBehaviour
     private void Update()
     {
         resources.coins += income * Time.deltaTime;
-        hp.HealthPoint -= 2 * Time.deltaTime;
+        hp.ReceiveDamage(2 * Time.deltaTime);
     }
 }

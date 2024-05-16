@@ -19,26 +19,23 @@ public class UnitFollowState : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //Будет ли стоять юнит?
+        //Пропадёт ли вражеская цель
         if (attackController.targetToAttack == null)
-        {
             animator.SetBool(IsFollowing, false);
-        }
+        
         else
         {
             //Юнит идёт за врагом
-            if (animator.transform.GetComponent<UnitMovement>().priorityMove == false)
+            if (!animator.transform.GetComponent<UnitMovement>().priorityMove)
                 agent.SetDestination(attackController.targetToAttack.position);
             
-            //Будет ли атаковать юнит?
-            float distanceFromTarget =
+            //Добрался ли юнит достаточно близко к цели для атаки
+            var distanceFromTarget =
                 Vector2.Distance(attackController.targetToAttack.position, animator.transform.position);
-            if (distanceFromTarget < attackingDistance)
-            {
-                agent.SetDestination(animator.transform.position);
-                animator.SetBool(IsAttacking, true);
-            }
+            
+            if (!(distanceFromTarget <= attackingDistance)) return;
+            agent.SetDestination(animator.transform.position);
+            animator.SetBool(IsAttacking, true);
         }
-        
     }
 }

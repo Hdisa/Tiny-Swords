@@ -253,7 +253,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113378657033696572}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ac333592774db24ba3a98249b6d8d97, type: 3}
   m_Name: 
@@ -287,10 +287,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7b4a5d93322794f8eba00afa896297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToAttack: 1
+  attackable: Enemy
   targetToAttack: {fileID: 0}
-  idleState: {r: 1, g: 1, b: 1, a: 0}
-  followState: {r: 1, g: 0.5638795, b: 0, a: 0}
-  attackState: {r: 1, g: 0.066404775, b: 0, a: 0}
+  damage: 10
+  canAttack: 0
 --- !u!95 &4047272914633368328
 Animator:
   serializedVersion: 5

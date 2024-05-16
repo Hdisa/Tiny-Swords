@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1287375317265881452}
   - component: {fileID: 5791007659761311021}
   - component: {fileID: 7589817173452577558}
+  - component: {fileID: -5164159356214160155}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -161,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainObject: {fileID: 3569562067035760234, guid: 7b229efbe01e9c24db75c7956be2f8b8, type: 3}
+  viableTargets: {fileID: 0}
 --- !u!114 &5773261058610293311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,3 +265,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &-5164159356214160155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187903659552284288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d068b16ccccafe46904d58abd2e6746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <meleeDistance>k__BackingField: 1
+  myList: {fileID: 11400000, guid: fe257cb267f8531479f51c9b94b130cc, type: 2}

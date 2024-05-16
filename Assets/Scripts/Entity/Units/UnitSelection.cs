@@ -8,7 +8,6 @@ public class UnitSelection : MonoBehaviour
 
     private static UnitSelection instance;
     public static UnitSelection Instance => instance;
-    private Camera cam;
 
     public void Awake()
     {
@@ -17,15 +16,8 @@ public class UnitSelection : MonoBehaviour
             Destroy(gameObject); //то уничтожаем
         else
             instance = this; //создаём экземпляр
-        
-        cam = Camera.main;
     }
-
-    private void Update()
-    {
-        
-    }
-
+    
     public void ClickSelect(GameObject unit)
     {
         DeselectAll();

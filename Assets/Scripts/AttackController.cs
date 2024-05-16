@@ -10,12 +10,6 @@ public class AttackController : MonoBehaviour
     private float timer;
     private Camera cam;
 
-
-    private void Awake()
-    {
-        cam = GetComponent<Camera>();
-    }
-
     private void Start()
     {
         cam = Camera.main;

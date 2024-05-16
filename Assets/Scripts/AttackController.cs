@@ -53,10 +53,12 @@ public class AttackController : MonoBehaviour
             targetToAttack = other.transform;
         }
     }
-
+    
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag(attackable) && targetToAttack != null)
-            targetToAttack = null;
+        {
+            targetToAttack = other.transform;
+        }
     }
 }

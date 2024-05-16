@@ -30,8 +30,8 @@ public class UnitAttackState : StateMachineBehaviour
             if (animator.GetComponent<AttackController>().canAttack)
             {
                 var dealDamage = unit.GetComponent<AttackController>().damage;
-                attackController.targetToAttack.GetComponent<Health>().ReceiveDamage(dealDamage);
                 unit.GetComponent<AttackController>().canAttack = false;
+                attackController.targetToAttack.GetComponent<Health>().ReceiveDamage(dealDamage);
                 animator.SetBool(IsAttacking, false);
             }
         

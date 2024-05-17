@@ -6,11 +6,6 @@ public class GameModeManager : MonoBehaviour
     [SerializeField] private Castle castle;
     [SerializeField] private List<TargetList> targetLists;
 
-    private void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (castle == null) GameOver();

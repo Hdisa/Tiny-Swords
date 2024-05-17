@@ -36,19 +36,20 @@ public class EnemyAI : MonoBehaviour
         {
             case State.Chase:
                 //что делать
-                agent.SetDestination(target.transform.position);
                 //как переключаться и куда
-                if (Vector3.Distance(transform.position, target.transform.position) <= target.meleeDistance && attackController.canAttack)
+                if (target != null && Vector3.Distance(transform.position, target.transform.position) <= target.meleeDistance && attackController.canAttack)
                 {
                     state = State.Attack;
                     //запуск анимации
                     break;
                 }
+                state = State.Choose;
                 break;
             case State.Attack:
                 //что делать
-                attackController.canAttack = false;
                 target.GetComponent<Health>().ReceiveDamage(attackController.damage);
+                attackController.canAttack = false;
+                if (target != null) state = State.Chase;
                 state = State.Choose;
                 break;
             case State.Choose:
@@ -57,6 +58,7 @@ public class EnemyAI : MonoBehaviour
                 target = viableTargets.Targetables.Aggregate((closest, next)  =>  //очень сильное колдунство, выберет ближайший из списка
                     Vector3.Distance(next.transform.position, transform.position) < Vector3.Distance(closest.transform.position, transform.position)? next: closest );
                 //как переключаться и куда
+                agent.SetDestination(target.transform.position);
                 state = State.Chase;
                 break;
         }

@@ -22,9 +22,9 @@ public class BuildManager : MonoBehaviour
         ess = resources.coins >= price;
     }
 
-    public void SellBuilding(float prise)
+    public void SellBuilding(float cost)
     {
-        price = prise;
+        price = cost;
         if (ess)
         {
             resources.coins -= price;

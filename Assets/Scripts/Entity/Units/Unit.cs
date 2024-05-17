@@ -10,6 +10,7 @@ public class Unit : MonoBehaviour
     private void Start()
     {
         UnitSelection.Instance.units.Add(gameObject);
+        transform.parent = null;
     }
 
     private void OnDestroy()

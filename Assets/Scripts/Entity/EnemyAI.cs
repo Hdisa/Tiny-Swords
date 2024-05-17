@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
@@ -6,11 +5,11 @@ using System.Linq;
 [RequireComponent(typeof(Health), typeof(NavMeshAgent), typeof(AttackController))]
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] private GameObject mainObject;
     [SerializeField] private TargetList viableTargets;
     private NavMeshAgent agent;
     private AttackController attackController;
 
+    //Ниже пример реализации машины состояния для врагов.
     private enum State
     {
         Choose,
@@ -24,8 +23,8 @@ public class EnemyAI : MonoBehaviour
 
     private void Awake()
     {
-        attackController = GetComponent<AttackController>();
         agent = GetComponent<NavMeshAgent>();
+        attackController = GetComponent<AttackController>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         state = State.Choose;
@@ -36,10 +35,10 @@ public class EnemyAI : MonoBehaviour
         switch (state)
         {
             case State.Chase:
-                agent.SetDestination(mainObject.transform.position);
                 //что делать
+                agent.SetDestination(target.transform.position);
                 //как переключаться и куда
-                if (Vector3.Distance(transform.position, target.transform.position) <= target.meleeDistance)
+                if (Vector3.Distance(transform.position, target.transform.position) <= target.meleeDistance && attackController.canAttack)
                 {
                     state = State.Attack;
                     //запуск анимации
@@ -48,7 +47,9 @@ public class EnemyAI : MonoBehaviour
                 break;
             case State.Attack:
                 //что делать
-                //как переключаться и куда
+                attackController.canAttack = false;
+                target.GetComponent<Health>().ReceiveDamage(attackController.damage);
+                state = State.Choose;
                 break;
             case State.Choose:
                 //как он выбирает цель?
@@ -60,6 +61,4 @@ public class EnemyAI : MonoBehaviour
                 break;
         }
     }
-    
-    
 }

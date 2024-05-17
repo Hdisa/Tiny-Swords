@@ -30,9 +30,8 @@ public class UnitAttackState : StateMachineBehaviour
             if (animator.GetComponent<AttackController>().canAttack)
             {
                 var dealDamage = unit.GetComponent<AttackController>().damage;
-                unit.GetComponent<AttackController>().canAttack = false;
                 attackController.targetToAttack.GetComponent<Health>().ReceiveDamage(dealDamage);
-                animator.SetBool(IsAttacking, false);
+                unit.GetComponent<AttackController>().canAttack = false;
             }
         
             var distanceFromTarget = Vector2.Distance(attackController.targetToAttack.position, animator.transform.position);

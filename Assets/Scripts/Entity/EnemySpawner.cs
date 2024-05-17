@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         timer = timeToSpawn;
-        if (!enemyPrefab.TryGetComponent(out ITargetable _))
+        if (!enemyPrefab.TryGetComponent(out Targetable _))
         {
             Debug.LogError("это неправильный враг");
         }

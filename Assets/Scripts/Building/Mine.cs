@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Health), typeof(GameResources))]
+[RequireComponent(typeof(Health))]
 public class Mine : MonoBehaviour
 {
     [SerializeField] private GameResources resources;

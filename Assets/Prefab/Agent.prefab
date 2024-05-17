@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 47006677882551125}
   - component: {fileID: 3686062202418170563}
   - component: {fileID: 2447237556131067662}
+  - component: {fileID: 8647120944610763308}
   m_Layer: 6
   m_Name: Agent
   m_TagString: Unit
@@ -251,7 +252,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToAttack: 1
-  attackable: Enemy
   targetToAttack: {fileID: 0}
   damage: 10
   canAttack: 0
@@ -383,3 +383,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &8647120944610763308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113378657033696572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d068b16ccccafe46904d58abd2e6746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <meleeDistance>k__BackingField: 2
+  myList: {fileID: 11400000, guid: 78933cb9269e5bf4ab40f4c7b78c67a1, type: 2}

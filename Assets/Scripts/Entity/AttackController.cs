@@ -3,7 +3,6 @@ using UnityEngine;
 public class AttackController : MonoBehaviour
 {
     [SerializeField] private float timeToAttack = 5;
-    [SerializeField] private string attackable;
     public Transform targetToAttack;
     public float damage = 10;
     public bool canAttack;
@@ -40,9 +39,11 @@ public class AttackController : MonoBehaviour
         }
     }
     
+    //Триггеры применяется для Юнитов, поскольку машина состояния для юнитов реализования иначе. Не включать триггеры на коллайдеры врагов
+    //Иначе враги будут друг на друга нападать. А в идеале всю эту конструкцию переделать :)
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(attackable) && targetToAttack == null)
+        if (other.CompareTag("Enemy") && targetToAttack == null)
         {
             targetToAttack = other.transform;
         }
@@ -50,7 +51,7 @@ public class AttackController : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag(attackable) && targetToAttack != null)
+        if (other.CompareTag("Enemy") && targetToAttack != null)
         {
             targetToAttack = other.transform;
         }

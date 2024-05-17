@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 4628142084168821450}
   - component: {fileID: 2681951117369801041}
   - component: {fileID: 7253313102279108796}
+  - component: {fileID: 7188545873267095374}
+  - component: {fileID: 7651292914255331927}
+  - component: {fileID: -6189537103675563477}
   m_Layer: 0
   m_Name: Castle
   m_TagString: Untagged
@@ -158,3 +161,42 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &7188545873267095374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8999665519092782412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d3f4a25298fac458b6414fe1cece7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 500
+--- !u!114 &7651292914255331927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8999665519092782412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a1cbd3b3396ef4cada630f0e7c1fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6189537103675563477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8999665519092782412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d068b16ccccafe46904d58abd2e6746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <meleeDistance>k__BackingField: 0
+  myList: {fileID: 11400000, guid: 78933cb9269e5bf4ab40f4c7b78c67a1, type: 2}

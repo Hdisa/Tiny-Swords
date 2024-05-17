@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 4073344068321585911}
   - component: {fileID: 4264216972478106437}
   - component: {fileID: 7123993189317319601}
-  - component: {fileID: 8079613333593556262}
   - component: {fileID: 7032844949142958761}
   - component: {fileID: 5773261058610293311}
-  - component: {fileID: 1287375317265881452}
   - component: {fileID: 5791007659761311021}
   - component: {fileID: 7589817173452577558}
   - component: {fileID: -5164159356214160155}
+  - component: {fileID: 4153642070790342148}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -106,7 +105,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -114,41 +113,6 @@ NavMeshAgent:
   m_BaseOffset: 0.71133333
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!58 &8079613333593556262
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8187903659552284288}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 3
 --- !u!114 &7032844949142958761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76008a9df42d814f8e19cb3a5d3f5e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainObject: {fileID: 3569562067035760234, guid: 7b229efbe01e9c24db75c7956be2f8b8, type: 3}
-  viableTargets: {fileID: 0}
+  viableTargets: {fileID: 11400000, guid: 78933cb9269e5bf4ab40f4c7b78c67a1, type: 2}
+  target: {fileID: 0}
 --- !u!114 &5773261058610293311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,23 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 50
---- !u!114 &1287375317265881452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8187903659552284288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e7b4a5d93322794f8eba00afa896297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToAttack: 2
-  attackable: Unit
-  targetToAttack: {fileID: 0}
-  damage: 15
-  canAttack: 0
 --- !u!61 &5791007659761311021
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -277,5 +224,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d068b16ccccafe46904d58abd2e6746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <meleeDistance>k__BackingField: 1
+  <meleeDistance>k__BackingField: 2
   myList: {fileID: 11400000, guid: fe257cb267f8531479f51c9b94b130cc, type: 2}
+--- !u!114 &4153642070790342148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187903659552284288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7b4a5d93322794f8eba00afa896297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToAttack: 3
+  targetToAttack: {fileID: 0}
+  damage: 20
+  canAttack: 0

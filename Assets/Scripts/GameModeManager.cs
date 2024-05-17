@@ -1,14 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameModeManager : MonoBehaviour
 {
-    [SerializeField] private Crystal crystal;
+    [SerializeField] private Castle castle;
     [SerializeField] private List<TargetList> targetLists;
+
+    private void Start()
+    {
+        
+    }
 
     void Update()
     {
-        if (crystal == null) GameOver();
+        if (castle == null) GameOver();
     }
 
     private void GameOver()

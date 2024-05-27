@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   edgeMode: 0
   keyboardMode: 1
-  fastSpeed: 0.05
-  normalSpeed: 0.01
+  fastSpeed: 0.1
+  normalSpeed: 0.05
   switchFast: 304
   edgeSize: 100
   zoomSpeed: 50

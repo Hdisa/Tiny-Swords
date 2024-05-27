@@ -7,6 +7,7 @@ public class UnitMovement : MonoBehaviour
     private NavMeshAgent agent;
     public bool priorityMove;
     private AttackController attackController;
+    private bool isRightSide = true;
     
     void Awake()
     {
@@ -27,12 +28,28 @@ public class UnitMovement : MonoBehaviour
                 unit.GetComponent<NavMeshAgent>().SetDestination(ray2D);
                 unit.GetComponent<AttackController>().targetToAttack = null;
             }
+            UnitSelection.Instance.DeselectAll();
+            Vector3 movementdd = ray2D;
+            Vector2 movement = movementdd.normalized;
+
+            if (movement.x > 0 && !isRightSide)
+                Spin();
+            
+            else if (movement.x < 0 && isRightSide)
+                Spin();
         }
 
         //Если юнит достиг точки назначения
         if (agent.hasPath == false || agent.remainingDistance <= agent.stoppingDistance)
-        {
             priorityMove = false;
-        }
+        
+    }
+    
+    void Spin()
+    {
+        isRightSide = !isRightSide;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 }

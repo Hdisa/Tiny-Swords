@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private TargetList viableTargets;
     private NavMeshAgent agent;
     private AttackController attackController;
+    private Animator animator;
 
     //Ниже пример реализации машины состояния для врагов.
     private enum State
@@ -20,11 +21,13 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private Targetable target;
 
     private State state;
+    private static readonly int IsReached = Animator.StringToHash("IsReached");
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         attackController = GetComponent<AttackController>();
+        animator = GetComponent<Animator>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         state = State.Choose;
@@ -41,6 +44,7 @@ public class EnemyAI : MonoBehaviour
                 {
                     state = State.Attack;
                     //запуск анимации
+                    animator.SetBool(IsReached, true);
                     break;
                 }
                 state = State.Choose;
@@ -51,6 +55,7 @@ public class EnemyAI : MonoBehaviour
                 attackController.canAttack = false;
                 if (target != null) state = State.Chase;
                 state = State.Choose;
+                animator.SetBool(IsReached, false);
                 break;
             case State.Choose:
                 //как он выбирает цель?

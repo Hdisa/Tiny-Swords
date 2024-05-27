@@ -16,5 +16,6 @@ public class Unit : MonoBehaviour
     private void OnDestroy()
     {
         UnitSelection.Instance.units.Remove(gameObject);
+        UnitSelection.Instance.selectedUnits.Remove(gameObject);
     }
 }

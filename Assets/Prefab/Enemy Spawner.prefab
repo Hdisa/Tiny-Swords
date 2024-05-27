@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8187903659552284288, guid: 268464d9fd0a2cf4cae7815531eea5ba, type: 3}
-  timeToSpawn: 5
+  timeToSpawn: 4
 --- !u!212 &4221918832955113648
 SpriteRenderer:
   m_ObjectHideFlags: 0

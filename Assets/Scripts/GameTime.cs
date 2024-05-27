@@ -4,7 +4,7 @@ using UnityEngine;
 public class GameTime : MonoBehaviour
 {
     public float GameSecond;
-    public float GameHour;
+    public static int GameHour;
 
     string stringSecond;
     private string stringHour;
